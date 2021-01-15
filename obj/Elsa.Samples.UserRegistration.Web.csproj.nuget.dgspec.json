@@ -1,23 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\src\\Elsa.Samples.UserRegistration\\src\\Elsa.Samples.UserRegistration.Web\\Elsa.Samples.UserRegistration.Web.csproj": {}
+    "C:\\Trabajo\\Kibernum\\ISP Motor Procesos\\Repo\\POCELSA\\Elsa.Samples.UserRegistration.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\src\\Elsa.Samples.UserRegistration\\src\\Elsa.Samples.UserRegistration.Web\\Elsa.Samples.UserRegistration.Web.csproj": {
+    "C:\\Trabajo\\Kibernum\\ISP Motor Procesos\\Repo\\POCELSA\\Elsa.Samples.UserRegistration.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\src\\Elsa.Samples.UserRegistration\\src\\Elsa.Samples.UserRegistration.Web\\Elsa.Samples.UserRegistration.Web.csproj",
+        "projectUniqueName": "C:\\Trabajo\\Kibernum\\ISP Motor Procesos\\Repo\\POCELSA\\Elsa.Samples.UserRegistration.Web.csproj",
         "projectName": "Elsa.Samples.UserRegistration.Web",
-        "projectPath": "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\src\\Elsa.Samples.UserRegistration\\src\\Elsa.Samples.UserRegistration.Web\\Elsa.Samples.UserRegistration.Web.csproj",
+        "projectPath": "C:\\Trabajo\\Kibernum\\ISP Motor Procesos\\Repo\\POCELSA\\Elsa.Samples.UserRegistration.Web.csproj",
         "packagesPath": "C:\\Users\\Kibernum\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\src\\Elsa.Samples.UserRegistration\\src\\Elsa.Samples.UserRegistration.Web\\obj\\",
+        "outputPath": "C:\\Trabajo\\Kibernum\\ISP Motor Procesos\\Repo\\POCELSA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kibernum\\Downloads\\elsa-samples-master\\elsa-samples-master\\NuGet.Config",
           "C:\\Users\\Kibernum\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -27,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/elsa/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -48,7 +46,7 @@
           "dependencies": {
             "Elsa": {
               "target": "Package",
-              "version": "[2.0.0-preview6.1335, )"
+              "version": "[1.5.2.1284, )"
             },
             "Elsa.Dashboard": {
               "target": "Package",

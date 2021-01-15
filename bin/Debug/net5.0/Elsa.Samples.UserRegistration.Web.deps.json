@@ -25,7 +25,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Elsa.Samples.UserRegistration.Web/1.0.0": {
         "dependencies": {
-          "Elsa": "1.5.0",
+          "Elsa": "1.5.2.1284",
           "Elsa.Dashboard": "1.5.2.1284",
           "Elsa.Persistence.EntityFrameworkCore": "1.5.2.1284",
           "Elsa.Persistence.MongoDb": "1.5.2.1284",
@@ -346,17 +346,17 @@
           "lib/netstandard2.1/DnsClient.dll": {}
         }
       },
-      "Elsa/1.5.0": {
+      "Elsa/1.5.2.1284": {
         "dependencies": {
-          "Elsa.Activities.Console": "1.5.0",
-          "Elsa.Activities.ControlFlow": "1.5.0",
-          "Elsa.Activities.Email": "1.5.0",
-          "Elsa.Activities.Http": "1.5.0",
-          "Elsa.Activities.Timers": "1.5.0",
-          "Elsa.Activities.UserTask": "1.5.0",
-          "Elsa.Activities.Workflows": "1.5.0",
+          "Elsa.Activities.Console": "1.5.2.1284",
+          "Elsa.Activities.ControlFlow": "1.5.2.1284",
+          "Elsa.Activities.Email": "1.5.2.1284",
+          "Elsa.Activities.Http": "1.5.2.1284",
+          "Elsa.Activities.Timers": "1.5.2.1284",
+          "Elsa.Activities.UserTask": "1.5.2.1284",
+          "Elsa.Activities.Workflows": "1.5.2.1284",
           "Elsa.Core": "1.5.2.1284",
-          "Elsa.Scripting.Liquid": "1.5.0"
+          "Elsa.Scripting.Liquid": "1.5.2.1284"
         },
         "runtime": {
           "lib/netstandard2.0/Elsa.dll": {
@@ -389,7 +389,7 @@
           "lib/netstandard2.0/Elsa.Abstractions.dll": {}
         }
       },
-      "Elsa.Activities.Console/1.5.0": {
+      "Elsa.Activities.Console/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284"
         },
@@ -403,10 +403,10 @@
           "lib/netstandard2.0/Elsa.Activities.Console.dll": {}
         }
       },
-      "Elsa.Activities.ControlFlow/1.5.0": {
+      "Elsa.Activities.ControlFlow/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
-          "Elsa.Scripting.JavaScript": "1.5.0"
+          "Elsa.Scripting.JavaScript": "1.5.2.1284"
         },
         "runtime": {
           "lib/netstandard2.0/Elsa.Activities.ControlFlow.dll": {
@@ -418,7 +418,7 @@
           "lib/netstandard2.0/Elsa.Activities.ControlFlow.dll": {}
         }
       },
-      "Elsa.Activities.Email/1.5.0": {
+      "Elsa.Activities.Email/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
           "MailKit": "2.10.0"
@@ -433,11 +433,11 @@
           "lib/netstandard2.0/Elsa.Activities.Email.dll": {}
         }
       },
-      "Elsa.Activities.Http/1.5.0": {
+      "Elsa.Activities.Http/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
-          "Elsa.Scripting.JavaScript": "1.5.0",
-          "Elsa.Scripting.Liquid": "1.5.0",
+          "Elsa.Scripting.JavaScript": "1.5.2.1284",
+          "Elsa.Scripting.Liquid": "1.5.2.1284",
           "Microsoft.AspNetCore.DataProtection": "3.1.9",
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -454,7 +454,7 @@
           "lib/netstandard2.0/Elsa.Activities.Http.dll": {}
         }
       },
-      "Elsa.Activities.Timers/1.5.0": {
+      "Elsa.Activities.Timers/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
           "Microsoft.Extensions.Hosting.Abstractions": "3.1.9",
@@ -470,7 +470,7 @@
           "lib/netstandard2.0/Elsa.Activities.Timers.dll": {}
         }
       },
-      "Elsa.Activities.UserTask/1.5.0": {
+      "Elsa.Activities.UserTask/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284"
         },
@@ -484,10 +484,10 @@
           "lib/netstandard2.0/Elsa.Activities.UserTask.dll": {}
         }
       },
-      "Elsa.Activities.Workflows/1.5.0": {
+      "Elsa.Activities.Workflows/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
-          "Elsa.Scripting.JavaScript": "1.5.0"
+          "Elsa.Scripting.JavaScript": "1.5.2.1284"
         },
         "runtime": {
           "lib/netstandard2.0/Elsa.Activities.Workflows.dll": {
@@ -589,7 +589,7 @@
           "lib/netstandard2.0/Elsa.Persistence.MongoDb.dll": {}
         }
       },
-      "Elsa.Scripting.JavaScript/1.5.0": {
+      "Elsa.Scripting.JavaScript/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
           "Jint": "3.0.0-beta-1914"
@@ -604,7 +604,7 @@
           "lib/netstandard2.0/Elsa.Scripting.JavaScript.dll": {}
         }
       },
-      "Elsa.Scripting.Liquid/1.5.0": {
+      "Elsa.Scripting.Liquid/1.5.2.1284": {
         "dependencies": {
           "Elsa.Core": "1.5.2.1284",
           "Fluid.Core": "1.0.0-beta-9693"
@@ -1826,11 +1826,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Collections.Immutable/5.0.0": {
-        "compile": {
-          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
-        }
-      },
+      "System.Collections.Immutable/5.0.0": {},
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -1857,11 +1853,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/5.0.0": {
-        "compile": {
-          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
-        }
-      },
+      "System.ComponentModel.Annotations/5.0.0": {},
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1917,11 +1909,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Diagnostics.DiagnosticSource/5.0.0": {
-        "compile": {
-          "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
-        }
-      },
+      "System.Diagnostics.DiagnosticSource/5.0.0": {},
       "System.Diagnostics.Tools/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -4341,12 +4329,12 @@
       "path": "dnsclient/1.3.1",
       "hashPath": "dnsclient.1.3.1.nupkg.sha512"
     },
-    "Elsa/1.5.0": {
+    "Elsa/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zqh9Di09zEsryIcSBdLj9ITL8oHINGr18LR1I6LGwv0FAEzpVHMejOBOSJhOJHk20bE3MToctodrzwv0RDZcew==",
-      "path": "elsa/1.5.0",
-      "hashPath": "elsa.1.5.0.nupkg.sha512"
+      "sha512": "sha512-oZUNGH8PBFBO/b3To0xiWzMzfc2FYSvT+eR799oJn+HRKBHMVYBEjI/km1B5ZykYWGDnulI62ZHt54T1fJl6Mw==",
+      "path": "elsa/1.5.2.1284",
+      "hashPath": "elsa.1.5.2.1284.nupkg.sha512"
     },
     "Elsa.Abstractions/1.5.2.1284": {
       "type": "package",
@@ -4355,54 +4343,54 @@
       "path": "elsa.abstractions/1.5.2.1284",
       "hashPath": "elsa.abstractions.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.Console/1.5.0": {
+    "Elsa.Activities.Console/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UWj+kFrZ3v3JhG6Uk/41IV0xuSRBMnFnLa/2DhaN1bvpWN9OrTKJsV5/W7fqGSXK7oGWugQF8gT5whWr8NSEBA==",
-      "path": "elsa.activities.console/1.5.0",
-      "hashPath": "elsa.activities.console.1.5.0.nupkg.sha512"
+      "sha512": "sha512-7PHeTYd53ZCANqQUvUjd2/GlfexMVycBjYdNQPM8BkjyIFUGtHmUD9N6dbwALNm9IeiQMT3cGzhujbfQoyoM7g==",
+      "path": "elsa.activities.console/1.5.2.1284",
+      "hashPath": "elsa.activities.console.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.ControlFlow/1.5.0": {
+    "Elsa.Activities.ControlFlow/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-46FkqzRgVtjz849FtXpL+qkMiyaFY32oGbAQmXYjFm0T4XBv8RW6XKeFyFge8ME80Wmr9uzta/UETCL1xGZCTA==",
-      "path": "elsa.activities.controlflow/1.5.0",
-      "hashPath": "elsa.activities.controlflow.1.5.0.nupkg.sha512"
+      "sha512": "sha512-dfGuJ+zFoxjM5JlzTNsicn/2MEsmzbbpo9Iife5ftn3FWK78+RK3PzIGF3d7hhYjRBTYOZJ4bY76nsMU4pLt4g==",
+      "path": "elsa.activities.controlflow/1.5.2.1284",
+      "hashPath": "elsa.activities.controlflow.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.Email/1.5.0": {
+    "Elsa.Activities.Email/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oiO0KTL//r7u8OQl0ws+MG1lx/E51RAlSLkqYYzjnFu0vnPwuYozid2LzFgSHV4x1MtNDMaOTLsPHGtVTACZ8A==",
-      "path": "elsa.activities.email/1.5.0",
-      "hashPath": "elsa.activities.email.1.5.0.nupkg.sha512"
+      "sha512": "sha512-pDrPpFrts68g/Ymvrxllhkw7hL3HmtijkasB/4cBt1NDjmhmzYPJlPc45fV7Mi7V8GiWpR/EtLoFlLVit567lA==",
+      "path": "elsa.activities.email/1.5.2.1284",
+      "hashPath": "elsa.activities.email.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.Http/1.5.0": {
+    "Elsa.Activities.Http/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cflohmbnQ7Vq9fGNRaX14wxVzLmn/ynIUInrKEfLIc22CAZVvSMOmSC8OtHGsIgFQvvPvHUVD+uhr2NUhF2oTg==",
-      "path": "elsa.activities.http/1.5.0",
-      "hashPath": "elsa.activities.http.1.5.0.nupkg.sha512"
+      "sha512": "sha512-V0dYTp0Dv3QX7JsBwDdb7814acacbaTvsNQSDt3nAIgm/plascYefqIWKFY4hxzrXYHhwABAjga8QgoBvP9eqA==",
+      "path": "elsa.activities.http/1.5.2.1284",
+      "hashPath": "elsa.activities.http.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.Timers/1.5.0": {
+    "Elsa.Activities.Timers/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YpxryD7c/4FyKVBoPg7qFyIqnIoNu9kxL66855av1EpAw2GPhS2Ion7+JAD10TH9enfKvXCr/Vkrz97vMZSDGQ==",
-      "path": "elsa.activities.timers/1.5.0",
-      "hashPath": "elsa.activities.timers.1.5.0.nupkg.sha512"
+      "sha512": "sha512-dxQp9RtUjVVYCj52wKoLlD3jgOqV/nbrxqXKSF1IRHcQD/fm2qsMNflslSLGqGvaCah5u5/P5GSjhGECC4mtdA==",
+      "path": "elsa.activities.timers/1.5.2.1284",
+      "hashPath": "elsa.activities.timers.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.UserTask/1.5.0": {
+    "Elsa.Activities.UserTask/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XkzodKRYCiErhgmXP6OelO/Cbu3YDuLMFWRTHaV9Po7h4lt0IsdrOMMPqJloSwybAKj6kVt6m+yR8O4+sy6wnw==",
-      "path": "elsa.activities.usertask/1.5.0",
-      "hashPath": "elsa.activities.usertask.1.5.0.nupkg.sha512"
+      "sha512": "sha512-I7VU0P9LAUk4foEIcml2FnsrmFlsPZg0Ktq+gqQKlQ1mIk21grqK6dtnf82F5kXa9BQlgC2ehCgxtgX0B28iRw==",
+      "path": "elsa.activities.usertask/1.5.2.1284",
+      "hashPath": "elsa.activities.usertask.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Activities.Workflows/1.5.0": {
+    "Elsa.Activities.Workflows/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wvL6gtv6/dfwJpc25s6G73dWvsWSk1O32oDPPBx4lQRT4lcdgDtR41QVz9BSfFrVFiQQ7leR3XQx3FGfwoEjfw==",
-      "path": "elsa.activities.workflows/1.5.0",
-      "hashPath": "elsa.activities.workflows.1.5.0.nupkg.sha512"
+      "sha512": "sha512-d+MLOWjBUoW9EV4aA+b1YAdlsvKobP1rYLkycq7YuLbbkI2E1snL80/JVGSu7sDZJK0IVij/4B7Z/p4auIdrTg==",
+      "path": "elsa.activities.workflows/1.5.2.1284",
+      "hashPath": "elsa.activities.workflows.1.5.2.1284.nupkg.sha512"
     },
     "Elsa.Core/1.5.2.1284": {
       "type": "package",
@@ -4432,19 +4420,19 @@
       "path": "elsa.persistence.mongodb/1.5.2.1284",
       "hashPath": "elsa.persistence.mongodb.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Scripting.JavaScript/1.5.0": {
+    "Elsa.Scripting.JavaScript/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Nk55rzkuBm2uxY6EI6pRUPGiOzBRAOxzxgMs8Md1pr3ufyIlMDiXqdwNwNlYoa7iH8Ewq+LnppfZVT3t2irLhA==",
-      "path": "elsa.scripting.javascript/1.5.0",
-      "hashPath": "elsa.scripting.javascript.1.5.0.nupkg.sha512"
+      "sha512": "sha512-eEUl7gwWhKiUNItq4d1iVZ0UjzcGxbEndfRC6sNGfd1XdPg7Z9xVbhfWKB0iXQZwWKJDvz8CsMPtojVR0V86Mw==",
+      "path": "elsa.scripting.javascript/1.5.2.1284",
+      "hashPath": "elsa.scripting.javascript.1.5.2.1284.nupkg.sha512"
     },
-    "Elsa.Scripting.Liquid/1.5.0": {
+    "Elsa.Scripting.Liquid/1.5.2.1284": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qoZubnRUhIWdLFNMPGfJxpa1kiH+8NYL4I1LexJylcfNK+2IrMEDnjmG21umDG/pwiCORVqXJRctLrKHjzicbw==",
-      "path": "elsa.scripting.liquid/1.5.0",
-      "hashPath": "elsa.scripting.liquid.1.5.0.nupkg.sha512"
+      "sha512": "sha512-eg71+1nN4J2Dy/+Oi/xXsivTuNQBUaEuokXqkVO0KROhHas8rzOEKp6cwCzAQrmkVvbnkJEkJl0Gsjrb9Ny5AA==",
+      "path": "elsa.scripting.liquid/1.5.2.1284",
+      "hashPath": "elsa.scripting.liquid.1.5.2.1284.nupkg.sha512"
     },
     "Elsa.Scrutor/3.0.2.27": {
       "type": "package",

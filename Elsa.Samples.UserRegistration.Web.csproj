@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-	  <PackageReference Include="Elsa" Version="2.0.0-preview6.1335" />
+      <PackageReference Include="Elsa" Version="1.5.2.1284" />
       <PackageReference Include="Elsa.Dashboard" Version="1.5.2.1284" />
       <PackageReference Include="Elsa.Persistence.EntityFrameworkCore" Version="1.5.2.1284" />
       <PackageReference Include="Elsa.Persistence.MongoDb" Version="1.5.2.1284" />
