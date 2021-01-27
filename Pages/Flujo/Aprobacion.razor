@@ -1,0 +1,77 @@
+﻿@page "/Flujo/Aprobacion"
+@using Elsa.Activities.Workflows.Extensions
+@using Elsa.Models
+
+
+@inject IWorkflowInvoker WorkflowInvoker
+@inject ApplicationDbContext context
+
+<div class="form-signup">
+    <h1 class="h3 mb-3 font-weight-normal">Aprobación de Solicitudes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Origen</th>
+                <th>Nombre del Quimico</th>
+                <th>Aprobado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Solicitudes)
+            {
+            <tr>
+                <td>
+                    @if (!item.Aprobado)
+                    { 
+                        <a href="Flujo/Gestionar/@item.Id" class="btn btn-success">Gestionar</a>
+                    }
+                        @*<button @onclick="@(() => BorrarPersona(item))" class="btn btn-danger">Borrar</button>*@
+                </td>
+                <td>@item.Nombre</td>
+                <td>@item.Email</td>
+                <td>@item.Origen</td>
+                <td>@item.NombreQuimico</td>
+                <td>
+                    @if (item.Aprobado)
+                    {
+                        <p>Si</p>
+                    } 
+                    else
+                    { 
+                        <p>No</p>
+                    }
+                 </td>
+             </tr >
+            }
+        </tbody>
+    </table>
+    <div hidden="@(!ShowConfirmation)">
+        Solicitud enviada, Te estaremos informando!!
+    </div>
+</div>
+
+@code {
+    private IList<SolicitudGenerica> Solicitudes { get; set; } = new List<SolicitudGenerica>();
+    //private SolicitudGenericaModel SolicitudGenericaModel { get; set; } = new SolicitudGenericaModel();
+
+    private bool ShowConfirmation { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Solicitudes = await context.SolicitudesGenericas.ToListAsync();
+    }
+
+    //private async Task HandleFormSubmission()
+    //{
+
+    //    //var input = new Variables();
+    //    //input.SetVariable("SolicitudGenericaModel", SolicitudGenericaModel);
+
+    //    //await WorkflowInvoker.TriggerSignalAsync("AprobacionSolicitud", input);
+
+    //    //ShowConfirmation = true;
+    //}
+}

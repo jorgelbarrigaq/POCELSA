@@ -97,6 +97,20 @@ using Elsa.Services.Extensions;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\_Imports.razor"
+using Elsa.Samples.UserRegistration.Web.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\_Imports.razor"
+using Microsoft.EntityFrameworkCore;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Index.razor"
 using Elsa.Activities.Workflows.Extensions;
 
@@ -110,7 +124,7 @@ using Elsa.Models;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/RegistroUsuario")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -119,7 +133,7 @@ using Elsa.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Index.razor"
+#line 29 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Index.razor"
        
 
     private RegistrationModel RegistrationModel { get; set; } = new RegistrationModel();
@@ -130,7 +144,8 @@ using Elsa.Models;
         var input = new Variables();
         input.SetVariable("RegistrationModel", RegistrationModel);
 
-        await WorkflowInvoker.TriggerSignalAsync("RegisterUser", input);
+        await WorkflowInvoker.TriggerSignalAsync("RegistroUsuario", input);
+
         ShowConfirmation = true;
     }
 
@@ -138,6 +153,7 @@ using Elsa.Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ApplicationDbContext Context { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWorkflowInvoker WorkflowInvoker { get; set; }
     }
 }

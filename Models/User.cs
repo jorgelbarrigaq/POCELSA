@@ -1,7 +1,10 @@
-﻿namespace Elsa.Samples.UserRegistration.Web.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Elsa.Samples.UserRegistration.Web.Models
 {
     public class User
     {
+        [Key]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }

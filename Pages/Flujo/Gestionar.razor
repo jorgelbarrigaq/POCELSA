@@ -1,0 +1,107 @@
+﻿@page "/Flujo/Gestionar/{IdSolicitud:int}"
+@using Elsa.Activities.Workflows.Extensions
+@using Elsa.Models
+@using Elsa.Activities.Workflows.Activities
+@inject IWorkflowInvoker WorkflowInvoker
+@inject ApplicationDbContext context
+@inject NavigationManager  NavigationManager
+
+<div class="form-signup">
+    <h1 class="h3 mb-3 font-weight-normal">Solicitud de @SolicitudGenerica.Nombre</h1>
+
+
+    <EditForm Model="@SolicitudGenerica" OnValidSubmit="@HandleFormSubmission">
+        @*hidden="@ShowConfirmation"*@
+
+
+        <InputText disabled="true" type="text" id="nombre" @bind-Value="@SolicitudGenerica.Nombre" placeholder="Nombre" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="email" @bind-Value="@SolicitudGenerica.Email" placeholder="Email" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="telefono" @bind-Value="@SolicitudGenerica.Telefono" placeholder="Telefono" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="rut" @bind-Value="@SolicitudGenerica.Rut" placeholder="Rut" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="producto" @bind-Value="@SolicitudGenerica.Producto" placeholder="Producto" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="origen" @bind-Value="@SolicitudGenerica.Origen" placeholder="Origen del Producto" class="form-control-plaintext" />
+        <InputText disabled="true" type="text" id="nombreQuimico" @bind-Value="@SolicitudGenerica.NombreQuimico" placeholder="Nombre del Quimico" class="form-control-plaintext" />
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+    </EditForm>
+
+</div>
+
+<div class="form-signup">
+    <EditForm Model="@SolicitudGenericaLog" OnValidSubmit="@HandleFormSubmission" EditContext="@EC">
+        @*hidden="@ShowConfirmation"*@
+
+
+        <InputTextArea id="log" @bind-Value="@SolicitudGenericaLog.Log" placeholder="Log de Aprobacion" class="form-control" />
+
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="display-1">
+            <p>
+                <button type="button" class="btn btn-success" @onclick="() => Aprobar(true)">Aprobar</button>
+                <button type="button" class="btn btn-danger" @onclick="() => Aprobar(false)">Rechazar</button>
+            </p>
+        </div>
+    </EditForm>
+</div>
+<div class="form-signup">
+    <h1 class="h3 mb-3 font-weight-normal">Logs</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in SolicitudGenerica.Logs)
+            {
+                <tr>
+                    <td>@item.Log</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    <div hidden="@(!ShowConfirmation)">
+        Respuesta enviada!!!
+    </div>
+</div>
+
+@code {
+    [Parameter] public int IdSolicitud { get; set; }
+    private EditContext EC { get; set; }
+    private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
+    private SolicitudGenericaLog SolicitudGenericaLog { get; set; } = new SolicitudGenericaLog();
+    private bool ShowConfirmation { get; set; } = false;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        SolicitudGenerica = await context.SolicitudesGenericas.Include(x => x.Logs).FirstOrDefaultAsync(x => x.Id == IdSolicitud);
+        
+    }
+
+    private async Task Aprobar(bool aprobado)
+    {
+        var input = new Variables();
+        input.SetVariable("IdSolicitud", IdSolicitud);
+        input.SetVariable("Log", SolicitudGenericaLog.Log);
+        input.SetVariable("Aprobado", aprobado);
+
+
+        await WorkflowInvoker.TriggerSignalAsync("Aprobacion", input, correlationId: SolicitudGenerica.Rut);
+
+        ShowConfirmation = true;
+        NavigationManager.NavigateTo("/Flujo/Aprobacion");
+
+    }
+
+    private async Task HandleFormSubmission()
+    {
+        await Aprobar(true);
+    }
+}

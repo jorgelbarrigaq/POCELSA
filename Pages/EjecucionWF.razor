@@ -1,0 +1,41 @@
+﻿@page "/EjecutaWF"
+    @using Elsa.Activities.Workflows.Extensions
+    @using Elsa.Models
+    @inject IWorkflowInvoker WorkflowInvoker
+
+    <div class="form-signup">
+        <EditForm Model="@ejecutaWF" OnValidSubmit="@HandleFormSubmission" >
+
+            <h1 class="h3 mb-3 font-weight-normal">Ejecución de Workflow</h1>
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <InputText type="text" id="Signal" @bind-Value="@ejecutaWF.Signal" placeholder="Señal a enviar" class="form-control" />
+            <InputText type="dasdas" id="CorrelationId" @bind-Value="@ejecutaWF.CorrelationId" placeholder="Id de Correlacion" class="form-control" />
+            <InputText id="Variable" @bind-Value="@ejecutaWF.Variable" placeholder="Variable a Enviar" class="form-control" />
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">Ejecutar</button>
+        </EditForm>
+
+        <div hidden="@(!ShowConfirmation)">
+            Señal @ejecutaWF.Signal enviada correctamente!!
+        </div>
+    </div>
+
+    @code {
+
+        private EjecutaWF ejecutaWF { get; set; } = new EjecutaWF();
+        private bool ShowConfirmation { get; set; } = false;
+
+        private async Task HandleFormSubmission()
+        {
+            var input = new Variables();
+            input.SetVariable("RegistrationModel", ejecutaWF.Variable);
+            
+            await WorkflowInvoker.TriggerSignalAsync(ejecutaWF.Signal, input: input, correlationId: ejecutaWF.CorrelationId);
+
+            ShowConfirmation = true;
+        }
+
+    }

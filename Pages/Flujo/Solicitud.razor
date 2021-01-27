@@ -1,0 +1,46 @@
+﻿@page "/"
+@using Elsa.Activities.Workflows.Extensions
+@using Elsa.Models
+@inject IWorkflowInvoker WorkflowInvoker
+@inject ApplicationDbContext context
+
+<div class="form-signup">
+    <EditForm Model="@SolicitudGenericaModel" OnValidSubmit="@HandleFormSubmission">
+        @*hidden="@ShowConfirmation"*@
+
+        <h1 class="h3 mb-3 font-weight-normal">Ingreso de Solicitud</h1>
+
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <InputText type="text" id="nombre" @bind-Value="@SolicitudGenericaModel.Nombre" placeholder="Nombre" class="form-control" />
+        <InputText type="email" id="email" @bind-Value="@SolicitudGenericaModel.Email" placeholder="Email" class="form-control" />
+        <InputText type="text" id="telefono" @bind-Value="@SolicitudGenericaModel.Telefono" placeholder="Telefono" class="form-control" />
+        <InputText type="text" id="rut" @bind-Value="@SolicitudGenericaModel.Rut" placeholder="Rut" class="form-control" />
+        <InputText type="text" id="producto" @bind-Value="@SolicitudGenericaModel.Producto" placeholder="Producto" class="form-control" />
+        <InputText type="text" id="origen" @bind-Value="@SolicitudGenericaModel.Origen" placeholder="Origen del Producto" class="form-control" />
+        <InputText type="text" id="nombreQuimico" @bind-Value="@SolicitudGenericaModel.NombreQuimico" placeholder="Nombre del Quimico" class="form-control" />
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Enviar</button>
+    </EditForm>
+
+    <div hidden="@(!ShowConfirmation)">
+        Solicitud enviada, Te estaremos informando!!
+    </div>
+</div>
+
+@code {
+    private SolicitudGenericaModel SolicitudGenericaModel { get; set; } = new SolicitudGenericaModel();
+    private bool ShowConfirmation { get; set; } = false;
+
+
+    private async Task HandleFormSubmission()
+    {
+        var input = new Variables();
+        input.SetVariable("SolicitudGenericaModel", SolicitudGenericaModel);
+
+        await WorkflowInvoker.TriggerSignalAsync("AprobacionSolicitud", input, correlationId: SolicitudGenericaModel.Rut);
+
+        ShowConfirmation = true;
+    }
+}

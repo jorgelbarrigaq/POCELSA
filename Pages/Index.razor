@@ -1,26 +1,28 @@
-﻿@page "/"
+﻿@page "/RegistroUsuario"
 @using Elsa.Activities.Workflows.Extensions
 @using Elsa.Models
 @inject IWorkflowInvoker WorkflowInvoker
+@inject ApplicationDbContext Context
 
 <div class="form-signup">
-    <EditForm Model="@RegistrationModel" OnValidSubmit="@HandleFormSubmission" hidden="@ShowConfirmation">
+    <EditForm Model="@RegistrationModel" OnValidSubmit="@HandleFormSubmission">
+        @*hidden="@ShowConfirmation"*@
 
-        <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Registro de Usuario</h1>
 
-        <DataAnnotationsValidator/>
-        <ValidationSummary/>
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
         <InputText type="text" id="name" @bind-Value="@RegistrationModel.Name" placeholder="Name" class="form-control" />
         <InputText type="email" id="email" @bind-Value="@RegistrationModel.Email" placeholder="Email" class="form-control" />
         <InputText type="password" id="password" @bind-Value="@RegistrationModel.Password" placeholder="Password" class="form-control" />
         <InputText type="password" id="repeatPassword" @bind-Value="@RegistrationModel.RepeatPassword" placeholder="Repeat password" class="form-control" />
-    
-        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Enviar</button>
     </EditForm>
 
     <div hidden="@(!ShowConfirmation)">
-        Thanks for signing up! Please check your email.
+        Gracias por registrarte! Por favor revisa tu email.
     </div>
 </div>
 
@@ -34,7 +36,8 @@
         var input = new Variables();
         input.SetVariable("RegistrationModel", RegistrationModel);
 
-        await WorkflowInvoker.TriggerSignalAsync("RegisterUser", input);
+        await WorkflowInvoker.TriggerSignalAsync("RegistroUsuario", input);
+
         ShowConfirmation = true;
     }
 

@@ -1,13 +1,19 @@
+using Elsa.Activities.Dropbox.Extensions;
 using Elsa.Activities.Email.Extensions;
 using Elsa.Activities.Http.Extensions;
+using Elsa.Activities.MassTransit;
+using Elsa.Activities.MassTransit.Extensions;
+using Elsa.Activities.Reflection.Extensions;
 using Elsa.Activities.Timers.Extensions;
 using Elsa.Dashboard.Extensions;
 using Elsa.Extensions;
 using Elsa.Persistence.EntityFrameworkCore.DbContexts;
 using Elsa.Persistence.EntityFrameworkCore.Extensions;
 using Elsa.Persistence.MongoDb.Extensions;
+using Elsa.Samples.UserRegistration.Web.Data;
 using Elsa.Samples.UserRegistration.Web.Extensions;
 using Elsa.Samples.UserRegistration.Web.Handlers;
+using Elsa.Samples.UserRegistration.Web.Messages;
 using Elsa.Samples.UserRegistration.Web.Models;
 using Elsa.Samples.UserRegistration.Web.Services;
 using Fluid;
@@ -34,17 +40,30 @@ namespace Elsa.Samples.UserRegistration.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
+            var massTransitBuilder = new DefaultAzureServiceBusMassTransitBuilder
+            {
+                MessageTypes = new[]
+                {
+                   typeof(CreateUser),
+                   typeof(UserActivated)
+                }
+                //Options = o => o.Bind(Configuration.GetSection("MassTransit:AzureServiceBus"))
+            };
+
             services
                 // Add Elsa services. 
                 .AddElsa(
                     elsa =>
                     {
                         // Configure Elsa to use the MongoDB provider.
-                        elsa.AddMongoDbStores(Configuration, databaseName: "UserRegistration", connectionStringName: "MongoDb");
-                        //elsa.AddEntityFrameworkStores<SqlServerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
+                        //elsa.AddMongoDbStores(Configuration, databaseName: "UserRegistration", connectionStringName: "MongoDb");
+                        elsa.AddEntityFrameworkStores<SqlServerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
+
 
 
                     })
+
+                .AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLServer")))
 
                 // Add Elsa Dashboard services.
                 .AddElsaDashboard()
@@ -55,16 +74,25 @@ namespace Elsa.Samples.UserRegistration.Web
                 .AddTimerActivities(options => options.Bind(Configuration.GetSection("Elsa:Timers")))
                 
                 .AddUserActivities()
-                //.AddReflectionActivities()
+                .AddReflectionActivities()
+                .AddDropboxActivities()
+
+
+                //.AddMassTransitActivities(massTransitBuilder)
 
                 // Add our PasswordHasher service.
                 .AddSingleton<IPasswordHasher, PasswordHasher>()
 
                 // Add a MongoDB collection for our User model.
-                .AddMongoDbCollection<User>("Users")
+                //.AddMongoDbCollection<User>("Users")
+                
 
                 // Add our liquid handler.
-                .AddNotificationHandlers(typeof(LiquidConfigurationHandler));
+                .AddNotificationHandlers(typeof(LiquidConfigurationHandler)
+
+                );
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
