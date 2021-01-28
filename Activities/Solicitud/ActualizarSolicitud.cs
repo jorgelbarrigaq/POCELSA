@@ -12,13 +12,13 @@ using Elsa.Samples.UserRegistration.Web.Services;
 using Elsa.Services;
 using Elsa.Services.Models;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
+
 
 
 namespace Elsa.Samples.UserRegistration.Web.Activities.Solicitud
 {
-    [ActivityDefinition(Category = "Solcitud", Description = "Crea una Solicitud", Icon = "fas fa-folder-plus", Outcomes = new[] { OutcomeNames.Done })]
-    public class CrearSolicitud : Activity
+    [ActivityDefinition(Category = "Solcitud", Description = "Actualiza una Solicitud", Icon = "fas fa-sync", Outcomes = new[] { OutcomeNames.Done })]
+    public class ActualizarSolicitud : Activity
     {
         private readonly ApplicationDbContext _store;
 
@@ -27,10 +27,17 @@ namespace Elsa.Samples.UserRegistration.Web.Activities.Solicitud
         //    IIdGenerator idGenerator,
         //    IPasswordHasher passwordHasher)
         //{
-        public CrearSolicitud(
+        public ActualizarSolicitud(
             ApplicationDbContext store)
         {
             _store = store;
+        }
+
+        [ActivityProperty(Hint = "Enter an expression.")]
+        public WorkflowExpression<int> IdSolicitud
+        {
+            get => GetState<WorkflowExpression<int>>();
+            set => SetState(value);
         }
 
         [ActivityProperty(Hint = "Enter an expression.")]
@@ -84,26 +91,27 @@ namespace Elsa.Samples.UserRegistration.Web.Activities.Solicitud
 
         protected override async Task<ActivityExecutionResult> OnExecuteAsync(WorkflowExecutionContext context, CancellationToken cancellationToken)
         {
-            //var solicitudModel = await context.EvaluateAsync(Entidad, cancellationToken);
-            var solicitud = new SolicitudGenerica()
-            {
-                Nombre = await context.EvaluateAsync(Nombre, cancellationToken),
-                Email = await context.EvaluateAsync(Email, cancellationToken),
-                Telefono = await context.EvaluateAsync(Telefono, cancellationToken),
-                Rut = await context.EvaluateAsync(Rut, cancellationToken),
-                Producto = await context.EvaluateAsync(Producto, cancellationToken),
-                Origen = await context.EvaluateAsync(Origen, cancellationToken),
-                NombreQuimico = await context.EvaluateAsync(NombreQuimico, cancellationToken)
-            };
+            var idSolicitud = await context.EvaluateAsync(IdSolicitud, cancellationToken);
+            var sol = await _store.SolicitudesGenericas.FirstOrDefaultAsync(x => x.Id == idSolicitud, cancellationToken);
+
+            if (sol == null)
+                return Outcome("Not Found");
 
 
-            _store.Add(solicitud);
+            sol.Nombre = await context.EvaluateAsync(Nombre, cancellationToken);
+            sol.Email = await context.EvaluateAsync(Email, cancellationToken);
+            sol.Telefono = await context.EvaluateAsync(Telefono, cancellationToken);
+            sol.Rut = await context.EvaluateAsync(Rut, cancellationToken);
+            sol.Producto = await context.EvaluateAsync(Producto, cancellationToken);
+            sol.Origen = await context.EvaluateAsync(Origen, cancellationToken);
+            sol.NombreQuimico = await context.EvaluateAsync(NombreQuimico, cancellationToken);
+
+
+            _store.Entry(sol).State = EntityState.Modified;
+
             await _store.SaveChangesAsync(cancellationToken);
-            // await _store.InsertOneAsync(user, cancellationToken: cancellationToken);
+      
 
-            //IEnumerable<User> listUsuarios = _store.User.fi();
-
-            Output.SetVariable("Solicitud", solicitud);
             return Done();
         }
     }

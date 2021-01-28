@@ -135,16 +135,16 @@ using Elsa.Models;
 #nullable restore
 #line 32 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\Solicitud.razor"
        
-    private SolicitudGenericaModel SolicitudGenericaModel { get; set; } = new SolicitudGenericaModel();
+    private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
     private bool ShowConfirmation { get; set; } = false;
 
 
     private async Task HandleFormSubmission()
     {
         var input = new Variables();
-        input.SetVariable("SolicitudGenericaModel", SolicitudGenericaModel);
+        input.SetVariable("SolicitudGenericaModel", SolicitudGenerica);
 
-        await WorkflowInvoker.TriggerSignalAsync("AprobacionSolicitud", input, correlationId: SolicitudGenericaModel.Rut);
+        await WorkflowInvoker.TriggerSignalAsync("AprobacionSolicitud", input, correlationId: SolicitudGenerica.Rut);
 
         ShowConfirmation = true;
     }

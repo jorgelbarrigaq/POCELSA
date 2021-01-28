@@ -145,24 +145,6 @@ C:\Users\Kibernum\Downloads\elsa-samples-master\elsa-samples-master\src\Elsa.Sam
 C:\Users\Kibernum\Downloads\elsa-samples-master\elsa-samples-master\src\Elsa.Samples.UserRegistration\src\Elsa.Samples.UserRegistration.Web\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Kibernum\Downloads\elsa-samples-master\elsa-samples-master\src\Elsa.Samples.UserRegistration\src\Elsa.Samples.UserRegistration.Web\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Kibernum\Downloads\elsa-samples-master\elsa-samples-master\src\Elsa.Samples.UserRegistration\src\Elsa.Samples.UserRegistration.Web\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.AssemblyInfoInputs.cache
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.AssemblyInfo.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.csproj.CoreCompileInputs.cache
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.MvcApplicationPartsAssemblyInfo.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.RazorComponent.input.cache
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Component.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\EjecucionWF.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Error.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Aprobacion.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Gestionar.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Solicitud.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.RazorComponent.output.cache
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\appsettings.Development.json
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\appsettings.json
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\libman.json
@@ -378,6 +360,26 @@ C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\runtimes\un
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.csprojAssemblyReference.cache
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.AssemblyInfoInputs.cache
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.AssemblyInfo.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.csproj.CoreCompileInputs.cache
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.RazorComponent.input.cache
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Component.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\EjecucionWF.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Error.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Aprobacion.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Gestionar.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\ReintentoSolicitud.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Flujo\Solicitud.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.RazorComponent.output.cache
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\RazorDeclaration\Elsa.Samples.UserRegistration.Web.dll
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.TagHelpers.input.cache
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.TagHelpers.output.cache
@@ -388,6 +390,7 @@ C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Error.razor.g.cs
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Flujo\Aprobacion.razor.g.cs
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Flujo\Gestionar.razor.g.cs
+C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Flujo\ReintentoSolicitud.razor.g.cs
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Flujo\Solicitud.razor.g.cs
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -406,4 +409,3 @@ C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Sample
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\ref\Elsa.Samples.UserRegistration.Web.dll
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.pdb
 C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.genruntimeconfig.cache
-C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\obj\Debug\net5.0\Elsa.Samples.UserRegistration.Web.csprojAssemblyReference.cache

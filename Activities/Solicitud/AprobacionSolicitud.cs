@@ -13,7 +13,7 @@ using MongoDB.Driver.Linq;
 
 namespace Elsa.Samples.UserRegistration.Web.Activities
 {
-    [ActivityDefinition(Category = "Solcitud", Description = "Actualiza Aprobacion de una Solicitud", Icon = "fas fa-user-plus", Outcomes = new[] { OutcomeNames.Done })]
+    [ActivityDefinition(Category = "Solcitud", Description = "Actualiza Aprobacion de una Solicitud", Icon = "fas fa-calendar-check", Outcomes = new[] { OutcomeNames.Done })]
     public class AprobacionSolicitud : Activity
     {
         private readonly ApplicationDbContext _store;

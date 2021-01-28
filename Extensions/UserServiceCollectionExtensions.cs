@@ -14,6 +14,7 @@ namespace Elsa.Samples.UserRegistration.Web.Extensions
                 .AddActivity<ActivateUser>()
                 .AddActivity<CrearSolicitud>()
                 .AddActivity<AprobacionSolicitud>()
+                .AddActivity<ActualizarSolicitud>()
                 .AddActivity<DeleteUser>();
         }
     }

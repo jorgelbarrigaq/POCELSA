@@ -29,7 +29,7 @@
 </div>
 
 <div class="form-signup">
-    <EditForm Model="@SolicitudGenericaLog" OnValidSubmit="@HandleFormSubmission" EditContext="@EC">
+    <EditForm Model="@SolicitudGenericaLog" OnValidSubmit="@HandleFormSubmission" >
         @*hidden="@ShowConfirmation"*@
 
 
@@ -39,8 +39,8 @@
         <ValidationSummary />
         <div class="display-1">
             <p>
-                <button type="button" class="btn btn-success" @onclick="() => Aprobar(true)">Aprobar</button>
-                <button type="button" class="btn btn-danger" @onclick="() => Aprobar(false)">Rechazar</button>
+                <button type="submit" class="btn btn-success" @onclick="() => Aprobar(true)">Aprobar</button>
+                <button type="submit" class="btn btn-danger" @onclick="() => Aprobar(false)">Rechazar</button>
             </p>
         </div>
     </EditForm>
@@ -73,7 +73,7 @@
 
 @code {
     [Parameter] public int IdSolicitud { get; set; }
-    private EditContext EC { get; set; }
+    private bool Aprobado { get; set; }
     private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
     private SolicitudGenericaLog SolicitudGenericaLog { get; set; } = new SolicitudGenericaLog();
     private bool ShowConfirmation { get; set; } = false;
@@ -82,26 +82,27 @@
     protected override async Task OnInitializedAsync()
     {
         SolicitudGenerica = await context.SolicitudesGenericas.Include(x => x.Logs).FirstOrDefaultAsync(x => x.Id == IdSolicitud);
-        
+
     }
 
-    private async Task Aprobar(bool aprobado)
+    private void Aprobar(bool aprobado)
+    {
+        Aprobado = aprobado;
+    }
+
+    private async Task HandleFormSubmission()
     {
         var input = new Variables();
         input.SetVariable("IdSolicitud", IdSolicitud);
         input.SetVariable("Log", SolicitudGenericaLog.Log);
-        input.SetVariable("Aprobado", aprobado);
+        input.SetVariable("Aprobado", Aprobado);
+
+        input.SetVariable("SolicitudGenericaModel", SolicitudGenerica);
 
 
         await WorkflowInvoker.TriggerSignalAsync("Aprobacion", input, correlationId: SolicitudGenerica.Rut);
 
         ShowConfirmation = true;
         NavigationManager.NavigateTo("/Flujo/Aprobacion");
-
-    }
-
-    private async Task HandleFormSubmission()
-    {
-        await Aprobar(true);
     }
 }

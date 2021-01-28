@@ -1,14 +1,15 @@
-﻿@page "/"
+﻿@page "/Flujo/ReintentoSolicitud/{IdSolicitud:int}"
 @using Elsa.Activities.Workflows.Extensions
 @using Elsa.Models
 @inject IWorkflowInvoker WorkflowInvoker
 @inject ApplicationDbContext context
+@inject NavigationManager  NavigationManager
 
 <div class="form-signup">
     <EditForm Model="@SolicitudGenerica" OnValidSubmit="@HandleFormSubmission" hidden="@ShowConfirmation">
         
 
-        <h1 class="h3 mb-3 font-weight-normal">Ingreso de Solicitud</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Reintento de Solicitud</h1>
 
         <DataAnnotationsValidator />
         <ValidationSummary />
@@ -16,7 +17,7 @@
         <InputText type="text" id="nombre" @bind-Value="@SolicitudGenerica.Nombre" placeholder="Nombre" class="form-control" />
         <InputText type="email" id="email" @bind-Value="@SolicitudGenerica.Email" placeholder="Email" class="form-control" />
         <InputText type="text" id="telefono" @bind-Value="@SolicitudGenerica.Telefono" placeholder="Telefono" class="form-control" />
-        <InputText type="text" id="rut" @bind-Value="@SolicitudGenerica.Rut" placeholder="Rut" class="form-control" />
+        <InputText type="text" disabled="true" id="rut" @bind-Value="@SolicitudGenerica.Rut" placeholder="Rut" class="form-control" />
         <InputText type="text" id="producto" @bind-Value="@SolicitudGenerica.Producto" placeholder="Producto" class="form-control" />
         <InputText type="text" id="origen" @bind-Value="@SolicitudGenerica.Origen" placeholder="Origen del Producto" class="form-control" />
         <InputText type="text" id="nombreQuimico" @bind-Value="@SolicitudGenerica.NombreQuimico" placeholder="Nombre del Quimico" class="form-control" />
@@ -28,18 +29,45 @@
         Solicitud enviada, Te estaremos informando!!
     </div>
 </div>
+<div class="form-signup" hidden="@(ShowConfirmation)">
+    <h1 class="h3 mb-3 font-weight-normal">Logs</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in SolicitudGenerica.Logs)
+            {
+                <tr>
+                    <td>@item.Log</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
 
 @code {
+    [Parameter] public int IdSolicitud { get; set; }
+
     private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
     private bool ShowConfirmation { get; set; } = false;
 
+    protected override async Task OnInitializedAsync()
+    {
+        SolicitudGenerica = await context.SolicitudesGenericas.Include(x => x.Logs).FirstOrDefaultAsync(x => x.Id == IdSolicitud);
+    }
 
     private async Task HandleFormSubmission()
     {
         var input = new Variables();
         input.SetVariable("SolicitudGenericaModel", SolicitudGenerica);
 
-        await WorkflowInvoker.TriggerSignalAsync("AprobacionSolicitud", input, correlationId: SolicitudGenerica.Rut);
+        await WorkflowInvoker.TriggerSignalAsync("Reingreso", input, correlationId: SolicitudGenerica.Rut);
 
         ShowConfirmation = true;
     }

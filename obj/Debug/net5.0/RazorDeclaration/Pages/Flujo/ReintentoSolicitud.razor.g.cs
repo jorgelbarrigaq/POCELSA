@@ -111,28 +111,21 @@ using Microsoft.EntityFrameworkCore;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\Gestionar.razor"
+#line 2 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\ReintentoSolicitud.razor"
 using Elsa.Activities.Workflows.Extensions;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\Gestionar.razor"
+#line 3 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\ReintentoSolicitud.razor"
 using Elsa.Models;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\Gestionar.razor"
-using Elsa.Activities.Workflows.Activities;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Flujo/Gestionar/{IdSolicitud:int}")]
-    public partial class Gestionar : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Flujo/ReintentoSolicitud/{IdSolicitud:int}")]
+    public partial class ReintentoSolicitud : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -140,40 +133,26 @@ using Elsa.Activities.Workflows.Activities;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 74 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\Gestionar.razor"
+#line 54 "C:\Trabajo\Kibernum\ISP Motor Procesos\Repo\POCELSA\Pages\Flujo\ReintentoSolicitud.razor"
        
     [Parameter] public int IdSolicitud { get; set; }
-    private bool Aprobado { get; set; }
-    private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
-    private SolicitudGenericaLog SolicitudGenericaLog { get; set; } = new SolicitudGenericaLog();
-    private bool ShowConfirmation { get; set; } = false;
 
+    private SolicitudGenerica SolicitudGenerica { get; set; } = new SolicitudGenerica();
+    private bool ShowConfirmation { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
         SolicitudGenerica = await context.SolicitudesGenericas.Include(x => x.Logs).FirstOrDefaultAsync(x => x.Id == IdSolicitud);
-
-    }
-
-    private void Aprobar(bool aprobado)
-    {
-        Aprobado = aprobado;
     }
 
     private async Task HandleFormSubmission()
     {
         var input = new Variables();
-        input.SetVariable("IdSolicitud", IdSolicitud);
-        input.SetVariable("Log", SolicitudGenericaLog.Log);
-        input.SetVariable("Aprobado", Aprobado);
-
         input.SetVariable("SolicitudGenericaModel", SolicitudGenerica);
 
-
-        await WorkflowInvoker.TriggerSignalAsync("Aprobacion", input, correlationId: SolicitudGenerica.Rut);
+        await WorkflowInvoker.TriggerSignalAsync("Reingreso", input, correlationId: SolicitudGenerica.Rut);
 
         ShowConfirmation = true;
-        NavigationManager.NavigateTo("/Flujo/Aprobacion");
     }
 
 #line default

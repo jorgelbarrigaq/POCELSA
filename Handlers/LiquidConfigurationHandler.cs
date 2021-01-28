@@ -17,7 +17,6 @@ namespace Elsa.Samples.UserRegistration.Web.Handlers
             var context = notification.TemplateContext;
             context.MemberAccessStrategy.Register<User>();
             context.MemberAccessStrategy.Register<RegistrationModel>();
-            context.MemberAccessStrategy.Register<SolicitudGenericaModel>();
             context.MemberAccessStrategy.Register<SolicitudGenericaLog>();
             context.MemberAccessStrategy.Register<SolicitudGenerica>();
 
